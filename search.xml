@@ -35,6 +35,116 @@
     <content><![CDATA[<blockquote>
 <p>hello markdown!</p>
 </blockquote>
+<blockquote>
+<p>#这是一级标题<br>##二级标题<br>###三级标题<br>####四级标题<br>#####五级标题<br>######六级标题</p>
+</blockquote>
+<h1 id="这是一级标题"><a href="#这是一级标题" class="headerlink" title="这是一级标题"></a>这是一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><hr>
+<p><strong>加粗文字</strong></p>
+<p><em>斜体文字</em></p>
+<p><em><strong>加粗斜体文字</strong></em></p>
+<p><del>删除线文字</del></p>
+<hr>
+<blockquote>
+<p>引用</p>
+<blockquote>
+<p>引用</p>
+<blockquote>
+<p>嵌套引用</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<hr>
+<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><hr>
+<hr>
+<p>图片语法：</p>
+<blockquote>
+<p>![图片alt] (图片地址 “图片title”)</p>
+</blockquote>
+<p>图片alt就是显示在图片下方的文字<br>图片title就是图片的标题，当鼠标移动到图片时显示的内容，可以不加</p>
+<p><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.nga.178.com%2Fattachments%2Fmon_202108%2F30%2Fi2Q176-ch72ZwT1kShs-190.jpeg&refer=http%3A%2F%2Fimg.nga.178.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666443474&t=bcfde03a4f2836f866c04f509135ab75" alt="原神我老公" title="托马"></p>
+<hr>
+<p>超链接</p>
+<blockquote>
+<p>![超链接名]  (超链接地址 “超链接”)</p>
+</blockquote>
+<p><img src="http://baidu.com/" alt="百度"><br><img src="https://www.jianshu.com/p/191d1e21f7ed/" alt="教程"></p>
+<hr>
+<p>列表<br>无序列表 - 列表内容 + 列表内容 * 列表内容</p>
+<blockquote>
+<ul>
+<li>列表内容</li>
+</ul>
+<ul>
+<li>列表内容</li>
+</ul>
+<ul>
+<li>列表内容</li>
+</ul>
+</blockquote>
+<hr>
+<p>有序列表<br>语法：数字加点</p>
+<ol>
+<li>列表内容</li>
+<li>列表内容</li>
+<li>列表内容</li>
+</ol>
+<hr>
+<p>代码</p>
+<p>单行代码用一个反引号包起来</p>
+<blockquote>
+<p><code>public static void main()&#123;&#125;</code> </p>
+</blockquote>
+<p>代码块：代码之间用三个反引号包起来，且两边的反引号单独占一行</p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt;public static void main()&#123;</span><br><span class="line">   int a = 0;</span><br><span class="line">   int b = 0;</span><br><span class="line">   return a+b; </span><br><span class="line">&gt;&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<hr>
+<p>表格</p>
+<p>语法：</p>
+<table>
+<thead>
+<tr>
+<th>表头</th>
+<th align="center">表头</th>
+<th align="right">表头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>内容</td>
+<td align="center">内容</td>
+<td align="right">内容</td>
+</tr>
+<tr>
+<td>内容</td>
+<td align="center">内容</td>
+<td align="right">内容</td>
+</tr>
+</tbody></table>
+<hr>
+<table>
+<thead>
+<tr>
+<th>姓名</th>
+<th align="center">技能</th>
+<th align="right">排行</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>刘备</td>
+<td align="center">哭</td>
+<td align="right">大哥</td>
+</tr>
+<tr>
+<td>关羽</td>
+<td align="center">打</td>
+<td align="right">二哥</td>
+</tr>
+<tr>
+<td>张飞</td>
+<td align="center">骂</td>
+<td align="right">三弟</td>
+</tr>
+</tbody></table>
 ]]></content>
       <categories>
         <category>测试</category>
