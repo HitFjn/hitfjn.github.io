@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>KMP</title>
+    <url>/2022/09/23/KMP/</url>
+    <content><![CDATA[<h1 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h1><p><img src="https://code-thinking.cdn.bcebos.com/gifs/KMP%E7%B2%BE%E8%AE%B21.gif" alt="KMP算法匹配流程"></p>
+<h2 id="首先求出next数组（前缀表）"><a href="#首先求出next数组（前缀表）" class="headerlink" title="首先求出next数组（前缀表）"></a>首先求出next数组（前缀表）</h2><p><img src="https://code-thinking.cdn.bcebos.com/pics/KMP%E7%B2%BE%E8%AE%B28.png" alt="&quot;如图所示&quot;"></p>
+<p>next数组存放的是每个子串的最长公共前后缀</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public int[] getNext(int[] next,String s)&#123;</span><br><span class="line">    next[0] = 0;</span><br><span class="line">    int j = 0;</span><br><span class="line">    for(int i=1;i&lt;s.length();i++)&#123;</span><br><span class="line">        while(j&gt;0&amp;&amp;s.charAt(i)!=s.charAt(j))&#123;</span><br><span class="line">            j = next[j-1];</span><br><span class="line">        &#125;</span><br><span class="line">        if(s.charAt(i)==s.charAt(j))</span><br><span class="line">            j++;</span><br><span class="line">        next[i] = j;</span><br><span class="line">    &#125;    </span><br><span class="line">    return next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="其次开始KMP匹配"><a href="#其次开始KMP匹配" class="headerlink" title="其次开始KMP匹配"></a>其次开始KMP匹配</h2><p><img src="https://code-thinking.cdn.bcebos.com/gifs/KMP%E7%B2%BE%E8%AE%B22.gif" alt="匹配流程"></p>
+<p>当匹配失败时，模式串指针j就返回到next[j-1]</p>
+<p>当匹配成功时，j++ i++</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public int KMP(String s,String t)&#123;</span><br><span class="line">    int[] next = new int[t.length()];</span><br><span class="line">    int j = 0;</span><br><span class="line">    for(int i=0;i&lt;s.length();i++)&#123;</span><br><span class="line">        while(j&gt;0&amp;&amp;s.charAt(i)!=t.charAt(j))&#123;</span><br><span class="line">            j = next[j-1];</span><br><span class="line">        &#125;</span><br><span class="line">        if(s.charAt(i)==t.charAt(j))&#123;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">        if(j==t.length())&#123;</span><br><span class="line">            return i-t.length()+1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>字符串</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2022/09/21/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -17,24 +36,6 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>KMP</title>
-    <url>/2022/09/23/KMP/</url>
-    <content><![CDATA[<h2 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h2><p>首先求出next数组</p>
-<p>next数组存放的是每个子串的最长公共前后缀</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public int[] getNext(int[] next,String s)&#123;</span><br><span class="line">    next[0] = 0;</span><br><span class="line">    int j = 0;</span><br><span class="line">    for(int i=1;i&lt;s.length();i++)&#123;</span><br><span class="line">        while(j&gt;0&amp;&amp;s.charAt(i)!=s.charAt(j))&#123;</span><br><span class="line">            j = next[j-1];</span><br><span class="line">        &#125;</span><br><span class="line">        if(s.charAt(i)==s.charAt(j))</span><br><span class="line">            j++;</span><br><span class="line">        next[i] = j;</span><br><span class="line">    &#125;    </span><br><span class="line">    return next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>其次开始KMP</p>
-<p>当匹配失败时，模式串指针j就返回到next[j-1]</p>
-<p>当匹配成功时，j++ i++</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public int KMP(String s,String t)&#123;</span><br><span class="line">    int[] next = new int[t.length()];</span><br><span class="line">    int j = 0;</span><br><span class="line">    for(int i=0;i&lt;s.length();i++)&#123;</span><br><span class="line">        while(j&gt;0&amp;&amp;s.charAt(i)!=t.charAt(j))&#123;</span><br><span class="line">            j = next[j-1];</span><br><span class="line">        &#125;</span><br><span class="line">        if(s.charAt(i)==t.charAt(j))&#123;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">        if(j==t.length())&#123;</span><br><span class="line">            return i-t.length()+1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>字符串</tag>
-      </tags>
   </entry>
   <entry>
     <title>我的第一篇博客</title>
